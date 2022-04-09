@@ -4,6 +4,8 @@ import { Button, Modal } from 'react-bootstrap';
 import LandingFamily from '../../Static/Images/LandingFamily.png';
 import LandingGroceries from '../../Static/Images/LandingGroceries.png';
 import LandingSafari from '../../Static/Images/LandingSafari.png';
+import LandingExtension from '../../Static/Images/LandingExtension.png';
+import LandingJames from '../../Static/Images/LandingJames.png';
 import { useNavigate } from 'react-router-dom';
 
 function Landing() {
@@ -26,6 +28,8 @@ function Landing() {
                 <img src={LandingFamily} style={{left: '3%', bottom: '15%', height: '50%', position: 'absolute', zIndex: 1}} alt="Family Activity" />
                 <img src={LandingGroceries} style={{right: '10%', bottom: 0, height: '30%', position: 'absolute', zIndex: 1}} alt="Groceries" />
                 <img src={LandingSafari} style={{left: 0, bottom: 0, height: '50%', position: 'absolute'}} alt="Safari" />
+                <img src={LandingExtension} style={{left: 0, top: '5%', height: '30%', position: 'absolute'}} alt="Extension" />
+                <img src={LandingJames} style={{right: 0, top: '0', width: '30%', position: 'absolute'}} alt="James" />
 
                 { showMission ? (
                     <div className="MissionStatement">
