@@ -28,14 +28,14 @@
           ],
           "all_frames": true,
           "js": [
-             "javascript/scripts/content.js"
+             "content.js"
           ],
           "run_at": "document_start"
        }
     ],
     "background": {
        "scripts": [
-          "javascript/background/background.js"
+          "background.js"
        ],
        "persistent": true
     }
