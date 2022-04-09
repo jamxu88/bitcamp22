@@ -11,15 +11,15 @@ function Navigation() {
     }
 
     const navGroups = () => {
-        return navigate("/dashboard");
+        return navigate("/groups");
     }
 
     const navBalances = () => {
-        return navigate("/dashboard");
+        return navigate("/balances");
     }
 
     const navPreferences = () => {
-        return navigate("/dashboard");
+        return navigate("/preferences");
     }
 
     /*const navMore = () => {

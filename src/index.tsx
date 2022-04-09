@@ -12,6 +12,9 @@ import './Static/Inter-Font/Inter-Light.ttf';
 import './Static/Inter-Font/Inter-Medium.ttf';
 import './Static/Inter-Font/Inter-SemiBold.ttf';
 import Dashboard from './Components/Pages/Dashboard';
+import Groups from './Components/Pages/Groups';
+import Balances from './Components/Pages/Balances';
+import Preferences from './Components/Pages/Preferences';
 
 ReactDOM.render(
   <>
@@ -19,6 +22,9 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/groups" element={<Groups />} />
+        <Route path="/balances" element={<Balances />} />
+        <Route path="/preferences" element={<Preferences />} />
       </Routes>
     </BrowserRouter>
   </>,
