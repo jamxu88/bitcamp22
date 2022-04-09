@@ -9,6 +9,9 @@
     "start": "node server.js"
   },
   "author": "",
+  "engines": {
+    "node": "12.21.0"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
