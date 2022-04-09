@@ -6,7 +6,7 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/validate").post(function(req, res) {
+router.route("/settings").post(function(req, res) {
     console.log(req);
 })
 
