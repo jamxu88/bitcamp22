@@ -1,0 +1,24 @@
+.HeadingBold {
+    font-family: "Inter";
+    src: url('../Inter-Font/Inter-SemiBold.ttf');
+}
+
+.HeadingLight {
+    font-family: "Inter";
+    src: url('../Inter-Font/Inter-Light.ttf');
+    font-weight: lighter;
+}
+
+.HeadingRegular {
+    font-family: "Inter";
+    src: url('../Inter-Font/Inter-Regular.ttf');
+    font-weight: normal;
+}
+
+.LandingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
