@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 //import DatabaseManager from '../database/manager.js';
 import CreditCode from "../CreditCode.js"
 let router = express.Router();
@@ -35,4 +35,4 @@ router.route("/create").post(function(req, res) {
     
 })
 
-export default router;
+export default router;*/

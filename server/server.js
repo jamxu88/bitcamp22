@@ -1,5 +1,5 @@
 import express from "express";
-import CreateCode from "./routes/CreateCode.js";
+//import CreateCode from "./routes/CreateCode.js";
 import Data from "./routes/Data.js";
 import Preferences from "./routes/Preferences.js";
 import ValidateCode from "./routes/ValidateCode.js";
@@ -26,7 +26,7 @@ app.use(auth(config));
 
 app.use('/api/', AddFunding);
 app.use('/api/', Profile);
-app.use('/api/', CreateCode);
+//app.use('/api/', CreateCode);
 app.use('/api/', Data);
 app.use('/api/', Preferences);
 app.use('/api/', ValidateCode);
