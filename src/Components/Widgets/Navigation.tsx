@@ -26,6 +26,10 @@ function Navigation() {
         return navigate("/dashboard");
     }*/
 
+    const viewLink = (link: string) => {
+        window.open(link, "_blank")
+    }
+
     return (
         <Navbar bg="black">
             <Container>
@@ -38,11 +42,10 @@ function Navigation() {
                     <Nav.Link onClick={() => navBalances()}>Balances</Nav.Link>
                     <Nav.Link onClick={() => navPreferences()}>Preferences</Nav.Link>
                     <NavDropdown title="More" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">1</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">2</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => viewLink("https://github.com/matthewnanas/bitcamp22")}>View Github</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => viewLink("https://devpost.com")}>View DevPost</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => viewLink("https://bit.camp")}>BitCamp</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
