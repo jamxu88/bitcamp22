@@ -8,6 +8,7 @@ import RemoveFunding from "./routes/RemoveFunding.js";
 import CreateCode from "./routes/CreateCode.js";
 import { auth } from 'express-openid-connect';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 const config = {
     authRequired: false,
@@ -26,6 +27,7 @@ var corsOptions = {
 }
 
 const app = express();
+app.use(cookieParser());
 const port = process.env.PORT || 3001;
 app.use(auth(config));
 app.use(cors({
@@ -54,7 +56,6 @@ app.listen(port, () => {
     console.log(`Server initialized on port ${port}!`)
 })
 
-app.get("/", function (req, res) {
-    console.log(req.cookies);
-    res.redirect("https://bitcamp2022.herokuapp.com?cookies="+req.header("set-cookie"));
+app.get("/", cors(corsOptions), function (req, res) {
+    res.redirect("https://bitcamp2022.herokuapp.com?cookies="+req.cookies.appSession);
 });
