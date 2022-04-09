@@ -13,7 +13,7 @@ function Landing() {
     const [showMission, setShowMission] = React.useState(false);
 
     const getStartedHandler = () => {
-        return navigate("/dashboard");
+        return navigate("/login");
     }
 
     return (

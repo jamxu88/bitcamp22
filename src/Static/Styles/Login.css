@@ -1,0 +1,82 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1f1f1f;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.buttons {
+    margin: 5px
+}
+
+.Split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.RightLanding {
+    background-color: #fff;
+    min-height: 100vh;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.LeftLanding {
+    background-color: #111111;
+    min-height: 100vh;
+    left: 0;
+}
+
+.Login {
+    text-align: center;
+    display: 'flex';
+    flex-direction: 'row';
+    width: auto;
+    height: auto;
+}
+
+.header {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.Chubs {
+    position: 'absolute' !important;
+    bottom: 30 !important;
+}
+
+.LoginField {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}

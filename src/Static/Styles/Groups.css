@@ -1,0 +1,14 @@
+.accordion-body { 
+    color: white;
+    background-color: black !important;
+}
+
+.accordion .accordion-flush {
+    color: white !important;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    background-color: black;
+    color: white;
+    border-radius: 0;
+}

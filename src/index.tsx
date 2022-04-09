@@ -15,6 +15,7 @@ import Dashboard from './Components/Pages/Dashboard';
 import Groups from './Components/Pages/Groups';
 import Balances from './Components/Pages/Balances';
 import Preferences from './Components/Pages/Preferences';
+import Login from './Components/Pages/Login';
 
 ReactDOM.render(
   <>
@@ -25,6 +26,7 @@ ReactDOM.render(
         <Route path="/groups" element={<Groups />} />
         <Route path="/balances" element={<Balances />} />
         <Route path="/preferences" element={<Preferences />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </>,

@@ -1,5 +1,4 @@
 import express from "express";
-//import CreateCode from "./routes/CreateCode.js";
 import Data from "./routes/Data.js";
 import Preferences from "./routes/Preferences.js";
 import ValidateCode from "./routes/ValidateCode.js";
@@ -34,3 +33,4 @@ app.use('/api/', ValidateCode);
 app.listen(port, () => {
     console.log(`Server initialized on port ${port}!`)
 })
+

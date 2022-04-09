@@ -9,13 +9,15 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/addfunding").post(function(req, res) {
+router.route("/addfunding").post(async function(req, res) {
     const Manager = new DatabaseManager();
+    await Manager.connect();
     let data = req.body;
-    let user = Manager.getUser(data.email);
-    user.funding = data.funding;
-    Manager.removeUser(data.email);
-    Manager.addUser(user);
+    let user = await Manager.getUser(data.email);
+    user = data.funding;
+    await Manager.removeUser(data.email);
+    await Manager.addUser(user);
+    await Manager.disconnect();
     res.send("Added Funding source: " + data.funding);
 })
 

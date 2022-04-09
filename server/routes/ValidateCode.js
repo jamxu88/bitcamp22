@@ -8,13 +8,17 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/validate").post((req, res)=> {
+router.route("/validate").post(async (req, res)=> {
     const data = req.body;
     const Manager = new DatabaseManager();
+    await Manager.connect();
+    console.log("a")
     console.log(data.code)
-    let code = Manager.getCode(data.code)
-    console.log(code.funding)
-    res.send(mint(JSON.stringify(code.funding)));
+    let funding = await Manager.getCode(data.code)
+    console.log("b")
+    console.log(funding)
+    await Manager.disconnect();
+    res.send(mint(JSON.stringify(funding.replace(/\\/gm,"").slice(1,-1))));
 })
 
 export default router;
