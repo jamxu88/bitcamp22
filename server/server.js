@@ -4,8 +4,6 @@ import Data from "./routes/Data.js";
 import Preferences from "./routes/Preferences.js";
 import ValidateCode from "./routes/ValidateCode.js";
 
-
-
 const app = express();
 const port = process.env.PORT || 3000;
 
