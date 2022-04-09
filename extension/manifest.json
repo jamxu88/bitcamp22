@@ -1,15 +1,15 @@
 {
-    "name": "sythe",
-    "version": "10.0",
+    "name": "MuseExtension",
+    "version": "1.0",
     "browser_action": {
        "default_icon": "assets/icon.png",
-       "default_popup": "html/auth.html"
+       "default_popup": "html/main.html"
     },
     "manifest_version": 2,
-    "description": "The king of Shopify. @sytheio",
+    "description": "Simple and secure spending and lending within social groups and families.",
     "icons": {
-       "16": "img/app-icon.png",
-       "128": "img/app-icon.png"
+       "16": "assets/icon.png",
+       "128": "assets/icon.png"
     },
     "permissions": [
        "storage",
