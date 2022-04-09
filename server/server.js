@@ -13,7 +13,7 @@ const config = {
     authRequired: false,
     auth0Logout: true,
     secret: 'Uu7JT95VGCu7MT77f15SnQqwOW6gyZfZ3S9pRysj3hPUq-tZp2Yl1d4nMzWEFeIi',
-    baseURL: 'https://bitcamp2022api.herokuapp.com',
+    baseURL: 'https://bitcamp2022.herokuapp.com',
     clientID: '9fZCjKmRgG35AauwFVoEIpOll7w6fdnR',
     issuerBaseURL: 'https://musepay.us.auth0.com'
 };
