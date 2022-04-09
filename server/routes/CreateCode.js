@@ -1,5 +1,5 @@
 import express from 'express';
-import DatabaseManager from '../database/manager.js';
+//import DatabaseManager from '../database/manager.js';
 import CreditCode from "../CreditCode.js"
 let router = express.Router();
 router.use(express.json())
@@ -12,7 +12,7 @@ router.use(function (req, res, next) {
 
 router.route("/create").post(function(req, res) {
     let data = req.body;
-    let Manager = new DatabaseManager()
+    //let Manager = new DatabaseManager()
     // Read Auth Information, Validate Authorization
 
     

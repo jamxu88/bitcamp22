@@ -1,4 +1,4 @@
-import User from "./User.js";
+/*import User from "./User.js";
 import CreditCode from "../CreditCode.js";
 import fs from "fs";
 
@@ -23,4 +23,4 @@ export default class DatabaseManager {
     addCode(code) {
         database.codes[code.getId()] = code;
     }
-}
+}*/
