@@ -44,6 +44,10 @@ export function PersonalSpendingsChart() {
         },
         vAxis: {
             textStyle: {color: '#FFF'}
+        },
+        titleTextStyle: {
+            color: "white",  
+            fontSize: 20,  
         }
     };
     
@@ -83,6 +87,10 @@ export function MerchantsChart() {
         vAxis: {
             textStyle: {color: '#FFF'}
         },
+        titleTextStyle: {
+            color: "white",
+            fontSize: 20,  
+        }
     };
     
     return (
@@ -109,6 +117,11 @@ export function Feed() {
             productName: "Apple iPhone 13 Mini (256GB, Pink) [Locked] + Carrier Subscription",
             buyer: "Andy Guo",
             productLink: "https://www.amazon.com/Apple-iPhone-Locked-Carrier-Subscription/dp/B09G9N7V46/",
+        },
+        {
+            productName: "Amazon Basics USB Type-C to USB Type-C 2.0 Charger Cable - 6-Foot, White",
+            buyer: "Matthew Nanas",
+            productLink: "https://www.amazon.com/AmazonBasics-USB-Type-C-Charger-Cable/dp/B01GGKZ2SC/",
         },
         {
             productName: "Amazon Basics USB Type-C to USB Type-C 2.0 Charger Cable - 6-Foot, White",
