@@ -1,0 +1,23 @@
+.ChartsContainer {
+    position: absolute;
+    left: -3%;
+    width: 60%;
+}
+
+.Feed {
+    position: absolute;
+    right: 0%;
+    width: 40%;
+}
+
+html {
+    background-color: black;
+    color: white;
+}
+
+.FeedCard {
+    background: black !important;
+    border-color: white;
+    border-width: 1px;
+    margin-top: 5px;
+}
