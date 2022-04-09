@@ -1,17 +1,14 @@
 .HeadingBold {
-    font-family: "Inter";
-    src: url('../Inter-Font/Inter-SemiBold.ttf');
+    font-family: 'Inter', sans-serif;
 }
 
 .HeadingLight {
-    font-family: "Inter";
-    src: url('../Inter-Font/Inter-Light.ttf');
+    font-family: 'Inter', sans-serif;
     font-weight: lighter;
 }
 
 .HeadingRegular {
-    font-family: "Inter";
-    src: url('../Inter-Font/Inter-Regular.ttf');
+    font-family: 'Inter', sans-serif;
     font-weight: normal;
 }
 
