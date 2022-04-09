@@ -10,9 +10,10 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/create").post(function(req, res) {
+router.route("/create").post(async function(req, res) {
     let data = req.body;
     let Manager = new DatabaseManager()
+    await Manager.connect();
     // Read Auth Information, Validate Authorization
 
     
@@ -20,15 +21,15 @@ router.route("/create").post(function(req, res) {
     // Get credit card information from database that matches the user ID
     // Create Credit Code
     let code = new CreditCode();
-    let user = Manager.getUser(data.email);
+    let user = await Manager.getUser(data.email);
     code.setIssuer(data.email);
-    let fundingSource = user.funding
-    code.setFunding(fundingSource);
+    code.setFunding(user);
     code.generateCode();
     code.setSpendingLimit(data.spending_limit);
     code.setMerchantLock(data.merchant_lock);
 
-    Manager.addCode(code)
+    await Manager.addCode(code)
+    await Manager.disconnect();
     res.send(code.code);
 })
 
