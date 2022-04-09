@@ -5,6 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Landing from './Components/Pages/Landing';
 import './Static/Inter-Font/Inter-Regular.ttf';
 import './Static/Inter-Font/Inter-Light.ttf';
