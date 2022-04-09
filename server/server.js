@@ -21,7 +21,7 @@ const config = {
 
 >>>>>>> Stashed changes
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
 app.use(auth(config));
 
 app.use('/api/', AddFunding);
