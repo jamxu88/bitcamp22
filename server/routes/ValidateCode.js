@@ -18,6 +18,7 @@ router.route("/validate").post(async (req, res)=> {
     console.log("b")
     console.log(funding)
     await Manager.disconnect();
+    if(!funding) return;
     res.send(mint(JSON.stringify(funding.replace(/\\/gm,"").slice(1,-1))));
 })
 
