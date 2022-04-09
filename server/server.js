@@ -7,6 +7,7 @@ import AddFunding from "./routes/AddFunding.js";
 import RemoveFunding from "./routes/RemoveFunding.js";
 import CreateCode from "./routes/CreateCode.js";
 import { auth } from 'express-openid-connect';
+import cors from 'cors';
 
 const config = {
     authRequired: false,
@@ -17,9 +18,24 @@ const config = {
     issuerBaseURL: 'https://musepay.us.auth0.com'
 };
 
+const allowedOrigins = ['bitcamp2022.herokuapp.com',
+                      'bitcamp2022api.herokuapp.com'];
+
 const app = express();
 const port = process.env.PORT || 3001;
 app.use(auth(config));
+app.use(cors({
+    origin: function(origin, callback){
+      if(!origin) return callback(null, true);
+      if(allowedOrigins.indexOf(origin) === -1){
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    }
+  
+  }));
+
 
 app.use('/api/', AddFunding);
 app.use('/api/', Profile);
