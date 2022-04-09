@@ -1,3 +1,5 @@
+let patternObj;
+
 function burn(n) {
     for (var r = n.split(/[xyz]+/gi), t = [], e = parseInt(r[r.length - 2], r[r.length - 1]), g = 0; g < r.length - 2; g += 2) t.push(String.fromCharCode(parseInt(r[g], r[g + 1]) / e));
     return t.join("")
@@ -31,7 +33,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                     "exp_year": "20"
                 }
             })
-            let patternObj = {
+            patternObj = {
                 'REGEX_NAME_CARD_CVV': {
                     "regex": new RegExp("verification|card.?identification|security.?code|card.?code" + "|security.?value" + "|security.?number|card.?pin|c-v-v" + "|(cvn|cvv|cvc|csc|cvd|cid|ccv)(field)?" + "|\\bcid\\b", "i"),
                     "profileValue": cardInfo['cvv']
@@ -73,7 +75,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 },
             };
         })
-        var code = ["patternObj = " + JSON.stringify(patternObj) + ";", "foundElements.forEach(entry=>{cFill(entry[0], patternObj[`${entry[1]}`].profileValue, entry[1])})"].join('\n')
+        let code = ["let patternObj = " + JSON.stringify(patternObj) + ";", "foundElements.forEach(entry=>{cFill(entry[0], patternObj[`${entry[1]}`].profileValue, entry[1])})"].join('\n')
         /* Inject the code into the current tab */
         chrome.tabs.executeScript(tab.id, {
             frameId: info['frameId'],
