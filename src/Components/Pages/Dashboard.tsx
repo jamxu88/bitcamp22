@@ -4,6 +4,7 @@ import Navigation from "../Widgets/Navigation";
 import { Chart } from "react-google-charts";
 import { Card, Button } from 'react-bootstrap';
 import { ChevronDoubleRightIcon, ChevronDoubleLeftIcon, GiftIcon, DotsCircleHorizontalIcon, CalendarIcon } from '@heroicons/react/solid';
+import { v4 as uuidv4 } from 'uuid';
 
 function Dashboard() {
     return (
@@ -161,7 +162,7 @@ export function Feed() {
             { 
                 feedData.map((card) => {
                     return (
-                        <div className="FeedCardContainer">
+                        <div className="FeedCardContainer" key={uuidv4()}>
                             <hr
                                 style={{
                                     color: "white",

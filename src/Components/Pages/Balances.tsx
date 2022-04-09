@@ -4,6 +4,7 @@ import '../../Static/Styles/Balance.css';
 import MuseCard from '../../Static/Images/MuseCard.png';
 import { Card, Button } from 'react-bootstrap';
 import { CreditCardIcon } from '@heroicons/react/solid';
+import { v4 as uuidv4 } from 'uuid';
 
 function Balances() {
     return (
@@ -57,7 +58,7 @@ export function RecentTransactions() {
             { 
                 transactionData.map((card) => {
                     return (
-                        <div className="FeedCardContainer">
+                        <div className="FeedCardContainer"  key={uuidv4()}>
                             <hr
                                 style={{
                                     color: "white",
