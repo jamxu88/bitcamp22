@@ -6,7 +6,7 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/validate").post((req, res) {
+router.route("/validate").post((req, res)=> {
     console.log(req);
 
 })
