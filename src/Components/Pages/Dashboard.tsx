@@ -3,7 +3,7 @@ import '../../Static/Styles/Dashboard.css';
 import Navigation from "../Widgets/Navigation";
 import { Chart } from "react-google-charts";
 import { Card, Button } from 'react-bootstrap';
-import { ChevronDoubleRightIcon, ChevronDoubleLeftIcon, GiftIcon, DotsCircleHorizontalIcon, CalendarIcon } from '@heroicons/react/solid'
+import { ChevronDoubleRightIcon, ChevronDoubleLeftIcon, GiftIcon, DotsCircleHorizontalIcon, CalendarIcon } from '@heroicons/react/solid';
 
 function Dashboard() {
     return (
