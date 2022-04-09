@@ -1,10 +1,10 @@
+import React from "react";
 import Navigation from "../Widgets/Navigation";
 
 function Groups() {
     return (
         <>
             <Navigation />
-            <p>Groups</p>
         </>
     )
 }

@@ -3,6 +3,7 @@ import '../../Static/Styles/Dashboard.css';
 import Navigation from "../Widgets/Navigation";
 import { Chart } from "react-google-charts";
 import { Card, Button } from 'react-bootstrap';
+import { ChevronDoubleRightIcon, ChevronDoubleLeftIcon, GiftIcon, DotsCircleHorizontalIcon, CalendarIcon } from '@heroicons/react/solid'
 
 function Dashboard() {
     return (
@@ -14,7 +15,10 @@ function Dashboard() {
                     <MerchantsChart />
                 </div>
                 <div className="Feed">
-                    <h1 style={{color: "white", alignSelf: 'center'}}>Feed</h1>
+                    <h1 style={{color: "white", alignSelf: 'center'}}>
+                        <CalendarIcon className="h-5 w-5 text-blue-500" height={50} style={{marginBottom: 10}} /> MuseFeed
+                    </h1>
+                    <p style={{color: "#C5C5C5", alignSelf: 'center'}}>Live notifications and monitor for activity within your friend groups!</p>
                     <Feed />
                 </div>
             </div>
@@ -109,29 +113,47 @@ export function MerchantsChart() {
 export function Feed() {
     const feedData = [
         {
-            productName: "COACH WOMENS City Tote In Signature Canvas",
-            buyer: "Tracy Vu",
-            productLink: "https://www.amazon.com/Coach-Womens-Signature-Canvas-Heart/dp/B09RR1GHQ3/ref=lp_23764300011_1_1",
+            date: "4/09/2022",
+            status: "Outbound",
+            vendor: "Tracy Vu",
+            name: "Matthew Nanas",
+            value: "50",
+            comments: "I need some doordash credits bro"
         },
         {
-            productName: "Apple iPhone 13 Mini (256GB, Pink) [Locked] + Carrier Subscription",
-            buyer: "Andy Guo",
-            productLink: "https://www.amazon.com/Apple-iPhone-Locked-Carrier-Subscription/dp/B09G9N7V46/",
+            date: "4/09/2022",
+            status: "Inbound",
+            vendor: "Matthew Nanas",
+            name: "Matthew Nanas",
+            value: "50",
+            comments: "I need some valorant skins PLEASEEE"
         },
         {
-            productName: "Amazon Basics USB Type-C to USB Type-C 2.0 Charger Cable - 6-Foot, White",
-            buyer: "Matthew Nanas",
-            productLink: "https://www.amazon.com/AmazonBasics-USB-Type-C-Charger-Cable/dp/B01GGKZ2SC/",
+            date: "4/09/2022",
+            status: "Transaction",
+            vendor: "apartments.com",
+            name: "Tracy Vu",
+            value: "50",
+            comments: "none"
         },
         {
-            productName: "Amazon Basics USB Type-C to USB Type-C 2.0 Charger Cable - 6-Foot, White",
-            buyer: "Matthew Nanas",
-            productLink: "https://www.amazon.com/AmazonBasics-USB-Type-C-Charger-Cable/dp/B01GGKZ2SC/",
-        }
+            date: "4/09/2022",
+            status: "Transaction",
+            vendor: "apartments.com",
+            name: "Tracy Vu",
+            value: "50",
+            comments: "none"
+        },
     ]
 
-    const viewProduct = (productLink: string) => {
-        window.open(productLink, "_blank")
+    const cardStatus = (card: any) => {
+        if (card.status == "Transaction") {
+            return `${card.name} authorized a transaction at ${card.vendor}`;
+        } else if (card.status == "Inbound") {
+            return `You requested $${card.value} from ${card.name}`;
+        } else if (card.status == "Outbound") {
+            return `${card.name} requested $${card.value} from you`;
+        }
     }
 
     return (
@@ -140,13 +162,22 @@ export function Feed() {
                 feedData.map((card) => {
                     return (
                         <div className="FeedCardContainer">
+                            <hr
+                                style={{
+                                    color: "white",
+                                    backgroundColor: "white",
+                                    height: 2
+                                }}
+                            />
                             <Card className="FeedCard">
                                 <Card.Body>
-                                    <Card.Title style={{color: 'white'}}>{card.productName}</Card.Title>
+                                    <Card.Title style={{color: 'white'}}>{card.date} {card.status} <ReturnIcon status={card.status} /></Card.Title>
                                     <Card.Text style={{color: 'white'}}>
-                                        {card.buyer}
+                                        <ReturnSubIcon status={card.status} /> {cardStatus(card)}
                                     </Card.Text>
-                                    <Button variant="primary" style={{color: 'white'}} onClick={() => viewProduct(card.productLink)}>View on {card.productLink.split(".")[1]}</Button>
+                                    <Card.Text style={{color: '#B0B0B0'}}>
+                                        Comments: {card.comments}
+                                    </Card.Text>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -155,6 +186,54 @@ export function Feed() {
             }
         </>
     )
+}
+
+export function ReturnIcon(props: any): JSX.Element {
+    if (props.status == "Transaction") {
+        return (
+            <>
+                <GiftIcon className="h-5 w-5 text-blue-500" height={25} style={{marginBottom: 3}} />
+            </>
+        );
+    } else if (props.status == "Inbound") {
+        return (
+            <>
+                <ChevronDoubleLeftIcon className="h-5 w-5 text-blue-500" height={25} style={{marginBottom: 3}} />
+            </>
+        );
+    } else if (props.status == "Outbound") {
+        return (
+            <>
+                <ChevronDoubleRightIcon className="h-5 w-5 text-blue-500" height={25} style={{marginBottom: 3}} />
+            </>
+        );
+    } else {
+        return <></>
+    }
+}
+
+export function ReturnSubIcon(props: any): JSX.Element {
+    if (props.status == "Transaction") {
+        return (
+            <>
+                <DotsCircleHorizontalIcon className="h-5 w-5 text-blue-500" height={25} color="#4395F5" style={{marginBottom: 3}} />
+            </>
+        );
+    } else if (props.status == "Inbound") {
+        return (
+            <>
+                <DotsCircleHorizontalIcon className="h-5 w-5 text-blue-500" height={25} color="#A5FF9D" style={{marginBottom: 3}} />
+            </>
+        );
+    } else if (props.status == "Outbound") {
+        return (
+            <>
+                <DotsCircleHorizontalIcon className="h-5 w-5 text-blue-500" height={25} color="#FF9DFB" style={{marginBottom: 3}} />
+            </>
+        );
+    } else {
+        return <></>
+    }
 }
 
 export default Dashboard;
