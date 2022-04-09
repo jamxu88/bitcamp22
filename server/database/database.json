@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "user": "",
+            "funding": [
+                {
+                    "type": "debit",
+                    "value": {
+                        "number": "4444 4444 4444 4443",
+                        "cvv": "123",
+                        "exp_month": "12",
+                        "exp_year": "20"
+                    }
+                }
+            ]
+        }
+    ],
+    "codes": {}
+}
