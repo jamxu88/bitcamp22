@@ -6,9 +6,8 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.route("/validate").post((req, res) {
+router.route("/data").post(function(req, res) {
     console.log(req);
-
 })
 
 export default router;

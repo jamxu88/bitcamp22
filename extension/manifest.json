@@ -1,0 +1,42 @@
+{
+    "name": "MuseExtension",
+    "version": "1.0",
+    "browser_action": {
+       "default_icon": "assets/icon.png",
+       "default_popup": "html/main.html"
+    },
+    "manifest_version": 2,
+    "description": "Simple and secure spending and lending within social groups and families.",
+    "icons": {
+       "16": "assets/icon.png",
+       "128": "assets/icon.png"
+    },
+    "permissions": [
+       "storage",
+       "tabs",
+       "notifications",
+       "activeTab",
+       "contextMenus",
+       "clipboardRead",
+       "clipboardWrite",
+       "http://*/",
+       "https://*/"
+    ],
+    "content_scripts": [{
+          "matches": [
+             "<all_urls>"
+          ],
+          "all_frames": true,
+          "js": [
+             "content.js"
+          ],
+          "run_at": "document_start"
+       }
+    ],
+    "background": {
+       "scripts": [
+          "background.js"
+       ],
+       "persistent": true
+    }
+ }
