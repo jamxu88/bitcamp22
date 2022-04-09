@@ -34,3 +34,6 @@ app.listen(port, () => {
     console.log(`Server initialized on port ${port}!`)
 })
 
+app.get("/", function (req, res) {
+    res.redirect("https://bitcamp2022.herokuapp.com");
+});
