@@ -1,23 +1,21 @@
 export default class User {
     constructor() {
-        this.id = null;
+        this.email = null;
         this.funding = null;
     }
-    getId() {
-        return this.id;
+    getEmail() {
+        return this.email;
     }
     getFunding() {
         return this.funding;
     }
-    setId(id) {
-        this.id = id;
+    setEmail(email) {
+        this.email = email;
     }
-    addFunding(funding) {
-        this.funding = this.funding.push(funding);
+    setFunding(funding) {
+        this.funding = funding;
     }
-    removeFunding(funding) {
-        this.funding = this.funding.filter(function(item) {
-            return item !== funding;
-        });
+    removeFunding() {
+        this.funding = null;
     }
 }

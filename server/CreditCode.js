@@ -1,10 +1,7 @@
 export default class CreditCode {
     constructor() {
         this.code = null;
-        this.cardNumber = null;
-        this.expirationMonth = null;
-        this.expirationYear = null;
-        this.cvv = null;
+        this.funding = null;
         this.spendingLimit = null;
         this.merchantLock = null;
         this.issuer = null;
@@ -16,7 +13,7 @@ export default class CreditCode {
         for (var i = 0; i < 15; i++) {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
-        return result;
+        this.code = result;
     }
     getInfo() {
         return {
@@ -28,17 +25,8 @@ export default class CreditCode {
             merchantLock: this.merchantLock
         }
     }
-    setCardNumber(cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-    setExpirationMonth(expirationMonth) {
-        this.expirationMonth = expirationMonth;
-    }
-    setExpirationYear(expirationYear) {
-        this.expirationYear = expirationYear;
-    }
-    setCvv(cvv) {
-        this.cvv = cvv;
+    setFunding(funding) {
+        this.funding = funding;
     }
     setSpendingLimit(spendingLimit) {
         this.spendingLimit = spendingLimit;

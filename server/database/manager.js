@@ -1,26 +1,41 @@
-/*import User from "./User.js";
+import User from "./User.js";
 import CreditCode from "../CreditCode.js";
 import fs from "fs";
-
-let database = fs.readFileSync("./database.json");
+import path from "path";
+import {fileURLToPath} from "url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 
 export default class DatabaseManager {
     constructor() {
-        this.data = null;
+        this.database = JSON.parse(fs.readFileSync(path.join(__dirname, "./database.json"), "utf8"));
     }
     addUser(user) {
-        database.users.append(user);
+        this.database.users.push(user);
+        fs.writeFileSync(path.join(__dirname, "./database.json"), JSON.stringify(this.database));
     }
-    removeUser(user) {
-        database.users.remove(user);
+    removeUser(email) {
+        for (let i = 0; i < this.database.users.length; i++) {
+            if (this.database.users[i].email == email) {
+                this.database.users.splice(i, 1);
+            }
+        }
+        fs.writeFileSync(path.join(__dirname, "./database.json"), JSON.stringify(this.database));
     }
-    getUser(id) {
-        return database.users.find(function(user) {
-            return user.getId() === id;
-        });
+    getUser(email) {
+        for (let i = 0; i < this.database.users.length; i++) {
+            if (this.database.users[i].email == email) {
+                return this.database.users[i];
+            }
+        }
+        return null;
     }
     addCode(code) {
-        database.codes[code.getId()] = code;
+        console.log(code)
+        this.database.codes[code.code] = code;
+        fs.writeFileSync(path.join(__dirname, "./database.json"), JSON.stringify(this.database));
     }
-}*/
+    getCode(code) {
+        return this.database.codes[code];
+    }
+}
