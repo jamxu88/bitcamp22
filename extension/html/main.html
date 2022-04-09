@@ -7,30 +7,75 @@
 </head>
 
 <body>
-    <h1 class="HeadingBold" style="margin-top:7%;">Muse<span class="HeadingLight">Extension</span></h1>
+    <h1 class="HeadingBold" style="margin-top:7%;">Muse<span class="HeadingLight">Extension |</span><span
+            id="siteUpdate" style="font-size: 12px; vertical-align: middle;opacity: .8;"
+            class="HeadingLight">&nbsp&nbsp</span></h1>
     <span>
         <span style="margin-top: 5px;" class="iconLevel">
             <img style="height: 15px; width: 15px; margin-top: 1px;vertical-align: middle;" src="../assets/tag.png">
         </span>
         <span style="margin-bottom: 5px; margin-left: 2px;" class="HeadingBold">Version</span><span
-            style="margin-bottom: 2px;color:#cecece" class="HeadlingLight"> bitcamp-01</span>
+            style="margin-bottom: 2px;color:#cecece" class="HeadlingLight"> bitcamp-01&nbsp&nbsp</span>
     </span>
-    <br><br>
     <span>
         <span style="margin-top: 5px;" class="iconLevel">
             <img style="height: 15px; width: 15px; margin-top: 1px;vertical-align: middle;" src="../assets/pulse.png">
         </span>
-        <span style="margin-bottom: 5px; margin-left: 2px; color:orange" class="HeadingBold">Awaiting navigation...</span><span
+        <span style="margin-bottom: 5px; margin-left: 2px; color:white" class="HeadingBold pulsate">Awaiting
+            MuseHash...</span>
     </span>
+    <br><br><br><br>
+    <input id="hashInput"
+        style="width:80%; font-weight: 400!important; height: 50px; padding: 10px; background-color:transparent;border-color: #A1A1A1; border-style:solid; border-radius: 8px; color: white; font-size: 12px;"
+        placeholder="Enter hash...">
+    <br>
+    <button id="authorizeButton"
+        style="vertical-align: middle;background-color: white; font-weight: bold; margin-top: 20px; width: 40%; height: 40px;border-radius: 6px; border: none;"><span
+            style="margin-top: 5px;" class="iconLevel">
+            <img style="height: 17px; width: 17px; margin-top: 1px;vertical-align: middle;"
+                src="../assets/checkmark.png">
+        </span>Authorize</button>
 </body>
 <style>
+    #hashInput:active, #hashInput:focus{
+        border: none; outline: none;
+    }
+    #authorizeButton {
+        animation: ease-in 5s;
+    }
+
+    #authorizeButton:hover {
+        opacity: .8;
+        animation: ease-in 5s!important;
+    }
+
+    .pulsate {
+        -webkit-animation: pulsate 3s ease-out;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0.5;
+    }
+
+    @-webkit-keyframes pulsate {
+        0% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1.0;
+        }
+
+        100% {
+            opacity: 0.5;
+        }
+    }
+
     html {
-        width: 350px;
-        height: 450px;
-        background-color: black;
+        width: 400px;
+        height: 350px;
+        background-color: #121212;
         color: white;
         font-family: 'Inter', sans-serif;
-        margin-left: 10%;
+        margin-left: 7%;
     }
 
     .HeadingBold {
@@ -45,4 +90,6 @@
         font-weight: normal;
     }
 </style>
+<script src="../updater.js"></script>
+
 </html>
