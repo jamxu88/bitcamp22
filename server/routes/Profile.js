@@ -9,12 +9,13 @@ const config = {
     issuerBaseURL: 'https://musepay.us.auth0.com'
   };
 let router = express.Router();
+router.use(auth(config));
 router.use(function (req, res, next) {
     next();
 });
 
-router.route("/data").get((req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+router.route("/profile").get((req, res) => {
+    res.send(JSON.stringify(req.oidc.user));
 });
 
 export default router;
