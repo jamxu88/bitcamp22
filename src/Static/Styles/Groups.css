@@ -1,20 +1,14 @@
 .accordion-body { 
-    color: "white" !important;
+    color: white;
     background-color: black !important;
 }
 
-
-
-.accordion-toggle {
-    background-color: gray;
-    display: block;
-    padding: 10px;
-    margin: -10px -15px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+.accordion .accordion-flush {
+    color: white !important;
 }
 
-.accordion-toggle.collapsed {
+.accordion-flush .accordion-item .accordion-button {
     background-color: black;
+    color: white;
+    border-radius: 0;
 }
-
