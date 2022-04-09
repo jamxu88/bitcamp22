@@ -22,3 +22,17 @@
     height: 100vh;
     text-align: center;
 }
+
+.LandingContainerBlur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    -webkit-filter: grayscale(90%)
+}
+
+.MissionStatement {
+    position: absolute;
+    z-index: 2;
+}
