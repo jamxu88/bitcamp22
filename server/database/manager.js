@@ -1,5 +1,5 @@
 import User from "./User.js";
-import CreditCode from "./CreditCode.js";
+import CreditCode from "../CreditCode.js";
 import fs from "fs";
 
 let database = fs.readFileSync("./database.json");
