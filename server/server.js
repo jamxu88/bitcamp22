@@ -5,6 +5,8 @@ import Preferences from "./routes/Preferences.js";
 import ValidateCode from "./routes/ValidateCode.js";
 import Profile from "./routes/Profile.js";
 import AddFunding from "./routes/AddFunding.js";
+import RemoveFunding from "./routes/RemoveFunding.js";
+import CreateCode from "./routes/CreateCode.js";
 import { auth } from 'express-openid-connect';
 
 const config = {
@@ -22,9 +24,10 @@ app.use(auth(config));
 
 app.use('/api/', AddFunding);
 app.use('/api/', Profile);
-//app.use('/api/', CreateCode);
+app.use('/api/', CreateCode);
 app.use('/api/', Data);
 app.use('/api/', Preferences);
+app.use('/api/', RemoveFunding);
 app.use('/api/', ValidateCode);
 //app.use('/test/', testRoute)
 
